@@ -9,22 +9,19 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use PrageethPeiris\SiteAllocator\Models\Site;
+use PrageethPeiris\SiteAllocator\Traits\ownSite;
+
 
 class User extends Model implements AuthorizableContract, AuthenticatableContract
 {
 
-    use Authorizable, Authenticatable, HasFactory;
+    use Authorizable, Authenticatable, HasFactory,ownSite;
 
     protected $guarded = [];
 
     protected $table = 'users';
 
 
-    public function sites(){
 
-        return $this->belongsToMany(Site::class);
-
-    }
 
 }

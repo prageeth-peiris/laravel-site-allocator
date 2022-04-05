@@ -16,15 +16,12 @@ class Site extends  Model
     protected $guarded = [];
 
 
-    public function user()
-    {
-        return $this->belongsTo(config('auth.providers.users.model'));
-    }
+
 
 
     public function users(){
 
-        return $this->belongsToMany(config('auth.providers.users.model'));
+        return $this->belongsToMany(config('site-allocator.user'),'user_sites');
 
     }
 

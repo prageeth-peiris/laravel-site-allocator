@@ -4,6 +4,7 @@
 namespace PrageethPeiris\SiteAllocator\Tests;
 
 
+use Illuminate\Support\Facades\Config;
 use PrageethPeiris\SiteAllocator\SiteAllocatorServiceProvider;
 
 class TestCase extends  \Orchestra\Testbench\TestCase
@@ -13,6 +14,9 @@ class TestCase extends  \Orchestra\Testbench\TestCase
     public function setUp(): void
     {
         parent::setUp();
+
+        //mock user class
+        Config::set('site-allocator.user',User::class);
         // additional setup
     }
 

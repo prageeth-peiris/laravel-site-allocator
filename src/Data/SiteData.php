@@ -16,6 +16,9 @@ class SiteData extends  Data
      */
     public function __construct(
 
+
+        public ?int $id,
+
         #[Required]
             public  string $name,
           #[Required]

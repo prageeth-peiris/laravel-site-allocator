@@ -12,6 +12,8 @@ return [
 
         'dataTransporter' => \PrageethPeiris\SiteAllocator\Http\Transporter\DefaultTransporter::class,
 
+           'user' =>  'App\Models\User',
+
 
 
           'spatie-laravel-data-configs' => [

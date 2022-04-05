@@ -56,7 +56,7 @@ class SiteCRUDTest extends  TestCase
         $response->assertStatus(200)
                  ->assertJsonCount(3,'data')
                  ->assertJsonFragment([
-
+                      'id'  => 1,
                      'name' => 'example.com',
                      'url' => 'http://example.com'
 
@@ -104,7 +104,7 @@ class SiteCRUDTest extends  TestCase
         $response->assertStatus(200)->assertExactJson([
 
             'data' => [
-
+                 'id'  => 2,
                 'name' => 'example.com',
                 'url' => 'http://example.com'
 
@@ -156,7 +156,7 @@ class SiteCRUDTest extends  TestCase
 
         $response->assertStatus(200)->assertExactJson([
             'data' => [
-
+                  'id'  => 1,
                 'name' => 'example2.com',
                 'url' => 'http://example2.com'
 
@@ -207,7 +207,7 @@ class SiteCRUDTest extends  TestCase
            ->assertExactJson([
 
                'data' => [
-
+                    'id'  => 2,
                    'name' => 'b',
                    'url' => 'abcd'
 
@@ -247,7 +247,7 @@ class SiteCRUDTest extends  TestCase
               ->assertExactJson([
 
                   'data' => [
-
+                       'id' => 2,
                       'name' => 'b',
                       'url' => 'abcd'
 

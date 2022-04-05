@@ -5,6 +5,7 @@ namespace PrageethPeiris\SiteAllocator\Http;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use PrageethPeiris\SiteAllocator\Data\SiteData;
 use PrageethPeiris\SiteAllocator\Http\Transporter\IDataTransport;
 use PrageethPeiris\SiteAllocator\Models\Site;
@@ -74,6 +75,9 @@ public function update(Site $site,Request $request){
 
 
     $data = SiteData::from($request)->all();
+
+
+    Arr::forget($data,'id');  //remove id column
 
 
     $site->updateOrFail($data);
