@@ -3,6 +3,13 @@
 
 
 A Simple Laravel Package to Allow / Disallow  a site to a user. This is useful for projects that uses Site as a main model.
+
+## Requirements
+
+- PHP >= 8.0
+- Laravel >= 9.0
+
+
 ## Installation
 
 You can install the package via composer:
