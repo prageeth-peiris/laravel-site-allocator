@@ -5,17 +5,20 @@
  */
 return [
 
+                 //apply middlewares for the routes
+              'middleware' => ['api'],
 
-       'middleware' => ['api'],
+               //define route prefixes
+              'prefix'  => 'api',
 
-       'prefix'  => 'api',
-
+          //define your own response transformer class
         'dataTransporter' => \PrageethPeiris\SiteAllocator\Http\Transporter\DefaultTransporter::class,
 
+            //user model you are using
            'user' =>  'App\Models\User',
 
 
-
+            //this package uses spatie laravel data package.
           'spatie-laravel-data-configs' => [
               /*
                * The package will use this date format when working with dates through the app
