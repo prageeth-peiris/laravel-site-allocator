@@ -7,7 +7,6 @@ namespace PrageethPeiris\SiteAllocator\Http;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\App;
 use PrageethPeiris\SiteAllocator\Data\UserSiteData;
 use PrageethPeiris\SiteAllocator\Http\Transporter\IDataTransport;

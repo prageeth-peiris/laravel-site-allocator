@@ -25,5 +25,14 @@ class Site extends  Model
 
     }
 
+    public function hasUser($user){
+
+      return   $this->users()->where('user_id',$user->getKey())
+            ->exists();
+
+    }
+
+
+
 
 }

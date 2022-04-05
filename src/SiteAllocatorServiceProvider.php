@@ -2,10 +2,11 @@
 
 namespace PrageethPeiris\SiteAllocator;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use PrageethPeiris\SiteAllocator\Http\Transporter\DefaultTransporter;
+use PrageethPeiris\SiteAllocator\Http\Middleware\CheckSiteAllocation;
 use PrageethPeiris\SiteAllocator\Http\Transporter\IDataTransport;
 use Spatie\LaravelData\Support\DataConfig;
 
@@ -31,9 +32,10 @@ class SiteAllocatorServiceProvider extends ServiceProvider
             $this->registerRoutes();
 
 
+        //register middleware
 
-
-
+        $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('is-site-allocated', CheckSiteAllocation::class);
 
 
     }
