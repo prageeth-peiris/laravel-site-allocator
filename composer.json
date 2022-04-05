@@ -1,0 +1,55 @@
+{
+    "name": "prageeth-peiris/site-allocator",
+    "description": "A Laravel Package to Allocate  Sites to a User",
+    "keywords": [
+        "prageeth-peiris",
+        "site-allocator"
+    ],
+    "homepage": "https://github.com/prageeth-peiris/site-allocator",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Prageeth Peiris",
+            "email": "glpspeiris@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0",
+        "spatie/laravel-data": "^1.4"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "PrageethPeiris\\SiteAllocator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PrageethPeiris\\SiteAllocator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PrageethPeiris\\SiteAllocator\\SiteAllocatorServiceProvider"
+            ],
+            "aliases": {
+                "SiteAllocator": "PrageethPeiris\\SiteAllocator\\SiteAllocatorFacade"
+            }
+        }
+    }
+}
