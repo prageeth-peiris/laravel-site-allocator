@@ -1,11 +1,8 @@
-# Very short description of the package
+# Laravel Site Allocator
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/prageeth-peiris/site-allocator.svg?style=flat-square)](https://packagist.org/packages/prageeth-peiris/site-allocator)
-[![Total Downloads](https://img.shields.io/packagist/dt/prageeth-peiris/site-allocator.svg?style=flat-square)](https://packagist.org/packages/prageeth-peiris/site-allocator)
-![GitHub Actions](https://github.com/prageeth-peiris/site-allocator/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
+A Simple Laravel Package to Allow / Disallow  a site to a user. This is useful for projects that uses Site as a main model.
 ## Installation
 
 You can install the package via composer:
@@ -13,12 +10,41 @@ You can install the package via composer:
 ```bash
 composer require prageeth-peiris/site-allocator
 ```
+Publish Configuration File
+```bash
+php artisan vendor:publish --provider="PrageethPeiris\SiteAllocator\SiteAllocatorServiceProvider" --tag="config"
+```
+
+
 
 ## Usage
 
 ```php
-// Usage description here
+use "is-site-allocated" middleware in your routes. Should pass the site_id as  a query parameter with request
 ```
+
+
+## Documentation
+
+```
+API Routes
+
+ - GET /api/sites
+ - GET /api/sites/id
+ - POST /api/sites {name - string parameter , url string parameter}
+ - PUT /api/sites {name - string parameter , url string parameter}
+ - DELETE /api/sites/id
+ - GET /api/user/id/sites
+ - POST /api/user/id/sites  {sites - array parameter}
+
+
+
+
+```
+
+
+
+
 
 ### Testing
 
@@ -47,6 +73,4 @@ If you discover any security related issues, please email glpspeiris@gmail.com i
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
