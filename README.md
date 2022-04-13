@@ -21,12 +21,28 @@ Publish Configuration File
 ```bash
 php artisan vendor:publish --provider="PrageethPeiris\SiteAllocator\SiteAllocatorServiceProvider" --tag="config"
 ```
+Run migrations
+```bash
+php artisan migrate
+```
+
 
 
 
 ## Usage
 
-```php
+Add ownSite trait to your User model
+```php 
+class User 
+{
+    use ownSite;
+
+
+}
+```
+
+
+```code
 use "is-site-allocated" middleware in your routes. Should pass the site_id as  a query parameter with request
 ```
 
